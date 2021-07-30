@@ -59,6 +59,7 @@ public class Book {
     }
 
     public void setName(String name) {
+    	System.out.println("setter is called");
         this.name = name;
     }
 
