@@ -49,6 +49,7 @@ public class ConnectionFactoryConfig {
 	                                                DefaultJmsListenerContainerFactoryConfigurer configurer) {
 	    DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
 	    factory.setPubSubDomain(true);
+	    factory.setMaxMessagesPerTask(1);
 	    factory.setMessageConverter(jacksonJmsMessageConverter());
 	    configurer.configure(factory, connectionFactory);
 	    return factory;

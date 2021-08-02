@@ -33,6 +33,7 @@ public class ConnectionFactoryConfig {
         connectionFactory.setBrokerURL(brokerUrl);
         connectionFactory.setUserName(userName);
         connectionFactory.setPassword(password);
+        
         return connectionFactory;
     }
     
@@ -53,6 +54,8 @@ public class ConnectionFactoryConfig {
 	    template.setConnectionFactory(connectionFactory());
 	    template.setMessageConverter(jacksonJmsMessageConverter());
 	    template.setPubSubDomain(true);
+	    
+	    
 	    return template;
 	}
 }
