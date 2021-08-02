@@ -1,11 +1,22 @@
 package com.javasampleapproach.activemq.models;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
  
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Product.class)
-public class Product {
-    private String name;
+public class Product implements Serializable {
+	private long id;
+    public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	private String name;
     
     private Company company;
 	

@@ -1,5 +1,6 @@
 package com.javasampleapproach.activemq.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -10,10 +11,20 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
  
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Company.class)
-public class Company {
+public class Company implements Serializable {
     private String name;
  
-    private List<Product> products;
+    private long id;
+    
+    public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	private List<Product> products;
 	
     public Company(){
     }

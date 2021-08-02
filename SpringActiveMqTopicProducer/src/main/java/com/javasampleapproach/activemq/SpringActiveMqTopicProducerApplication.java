@@ -38,7 +38,7 @@ public class SpringActiveMqTopicProducerApplication implements CommandLineRunner
 		
 		iphone7.setCompany(apple);
 		iPadPro.setCompany(apple);
-		
+		System.out.println(apple);
 		// send message to ActiveMQ
 		publisher.send(apple);
         
@@ -58,6 +58,7 @@ public class SpringActiveMqTopicProducerApplication implements CommandLineRunner
         /*
          * send message to ActiveMQ
          */
+		System.out.println(publisher);
 		publisher.send(samsung);
 	}
 }
